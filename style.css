@@ -73,14 +73,23 @@ body {
 	object-fit: cover;
 }
 
-.fashion-span {
-	color: rgb(255, 139, 93);
+.dark-souls-2-span {
+	color: #bfb7a8;
 }
 .demon-souls-span {
 	color: #374c8c;
 }
 .dark-souls-span {
 	color: #d99962;
+}
+.bloodborne-span {
+	color: #2e5159;
+}
+.dark-souls-3-span {
+	color: #f2dc6d;
+}
+.sekiro-span {
+	color: #61748c;
 }
 
 .hero-desc h2 {
@@ -214,7 +223,19 @@ body {
 }
 
 .t-swipe3 {
-	background: rgb(255, 139, 93);
+	background: #bfb7a8;
+}
+
+.t-swipe4 {
+	background: #2e5159;
+}
+
+.t-swipe5 {
+	background: #f2dc6d;
+}
+
+.t-swipe6 {
+	background: #61748c;
 }
 
 .scrollmagic-pin-spacer {
