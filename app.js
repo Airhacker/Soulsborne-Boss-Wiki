@@ -110,9 +110,54 @@ function navToggle(e) {
 	}
 }
 
+// Barba Page Transitions
+barba.init({
+	views: [
+		{
+			namespace: "home",
+			beforeEnter() {
+				animateSlides();
+			},
+			beforeLeave() {
+				slideScene.destroy();
+				pageScene.destroy();
+				controller.destroy();
+			},
+		},
+		{
+			namespace: "darksouls2",
+		},
+	],
+	transitions: [
+		{
+			leave({ current, next }) {
+				let done = this.async();
+				// Scroll to the top
+				window.scrollTo(0, 0);
+				//An Animation
+				const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+				tl.fromTo(
+					current.container,
+					1,
+					{ opacity: 1 },
+					{ opacity: 0, onComplete: done }
+				);
+			},
+			enter({ current, next }) {
+				//An Animation
+				const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+				tl.fromTo(
+					next.container,
+					1,
+					{ opacity: 0 },
+					{ opacity: 1, onComplete: done }
+				);
+			},
+		},
+	],
+});
+
 //Event Listeners
 burger.addEventListener("click", navToggle);
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
-
-animateSlides();
